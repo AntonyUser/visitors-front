@@ -18,8 +18,8 @@ export const Table = ({ visitors, handleClick }) => {
           <tr className="table-dark" key={items.userId}>
             <th scope="row">{items.userId}</th>
             <td className="table-dark">{items.name}</td>
-            <td className="table-dark">backend developer missed this field</td>
-            <td className="table-dark">5:35</td>
+            <td className="table-dark">{items.lastName}</td>
+            <td className="table-dark">{items.time}</td>
             <td className="table-dark">
               <ul className={css.table__btns_list}>
                 <li className={css.table__btns_item}>

@@ -14,8 +14,12 @@ const App = () => {
 
   useEffect(() => {
     try {
-      fetchVisitors().then((res) => {
-        setVisitors(res);
+      setTimeout(() => {
+        fetchVisitors().then((res) => {
+          setVisitors(res);
+        }, 3000);
+        // fetchVisitors().then((res) => {
+        //   setVisitors(res);
         // console.log(`res.data`, res);
         // console.log(`visitors`, visitors);
       });
@@ -37,8 +41,15 @@ const App = () => {
   };
 
   const sendData = (data) => {
-    const { name } = data;
-    const newVisitor = { userId: nanoid(), name: name };
+    const { name, surname } = data;
+    const time = new Date();
+    const now = time.toLocaleString();
+    const newVisitor = {
+      userId: nanoid(),
+      name: name,
+      lastName: surname,
+      time: now,
+    };
     addVisitor(newVisitor);
   };
 
